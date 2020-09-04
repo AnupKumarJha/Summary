@@ -15,9 +15,9 @@ Motivation:
 5.Resume Sortlisting
 6.Information Retrieval 
 7.Chatbot,Q and A ,voice to text and text to voice translation
-8.LAnguage Decteion and translation
-9.TExt Summarization using graph method
-10.Text generation.predection
+8.Language Detection and translation
+9.Text Summarization using graph method
+10.Text generation and prediction
 
 Chapter1:::::::::::::::::::::::::::::::::::::::::::::
 Exctrating the data
@@ -27,8 +27,8 @@ Exctrating the data
 4.reading json object
 5.reading html page and parsing
 6.regular expression
-7.strin ghandling
-Web Scraping
+7.string handling
+8.Web Scraping
 
 Data Storage Option
 1.SQl databases
