@@ -1,0 +1,51 @@
+# Statistics is a subfield of mathematics. It refers to a collection of methods for
+# working with data and using data to answer questions.
+
+# Descriptive Statistics:
+#     Descriptive statistics refer to methods for summarizing raw
+#     observations into information that we can understand and share.
+# like from a given data we don't understand anything but we have mean and variance then '
+# we can manage to get some info
+
+#########
+# Inferential Statistics: Inferential statistics is a fancy name for methods that aid in quantifying properties of the domain or population
+#     from a smaller set of obtained observations called a sample
+from numpy.random import seed
+from numpy.random import randn
+import numpy
+from numpy import  mean
+from numpy import var#to import variance
+from numpy import std#to import standard davation
+# seed(1)#pseudorandom number generato
+# NumPy random seed is simply a function that sets the random seed of the NumPy pseudo-random number generator. It provides an essential input that enables
+# NumPy to generate pseudo-random numbers for random processes
+data=5*randn(10000)+50
+# data=[1,2,3,4,5,6]
+print("mean data =",mean(data))
+print("varience of data=",var(data))
+print(numpy.sqrt(var(data)))
+print("std daivation=",std(data))
+#####################correlation between variabbles####
+
+from scipy.stats import pearsonr
+seed(1)
+data1=20*randn(1000)+100
+data2=data1+(10*randn(1000)+50)
+corr,p=pearsonr(data1,data2)
+print('pearsons correlations=',corr)
+#######################Hypothesis testing#########Student t-test###
+from scipy.stats import ttest_ind
+seed(1)
+data1=5*randn(100)+50
+data2=5*randn(100)+51
+stat,p=ttest_ind(data1,data2)
+print("stat =",stat,"p=",p)
+# Hypothesis 0 (H0): Assumption of the test holds and is failed to be rejected
+# Hypothesis 1 (H1): Assumption of the test does not hold and is rejected at some level of significance.
+alpha=0.05
+if p>alpha:
+    print("some distribution(fial to reject)");
+else:
+    print("different distibution (reject H0)")
+    #Need futher knowledge about this in subdsequent
+####################################################

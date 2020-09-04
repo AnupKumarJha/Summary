@@ -1,0 +1,14 @@
+What ???
+"""
+A self-organizing map (SOM) or self-organizing feature map (SOFM) is a type of artificial neural network (ANN) that is trained using unsupervised learning to produce a low-dimensional (typically two-dimensional), discretized representation of the input space of the training samples, called a map, and is therefore a method to do dimensionality reduction.
+"""
+
+Competitive learning is a form of unsupervised learning in artificial neural networks, in which nodes compete for the right to respond to a subset of the input data.
+
+What is different to other method like ann ,cnn,rnn???
+
+
+"""artificial neural networks as they apply competitive learning as opposed to error-correction learning (such as backpropagation with gradient descent), """
+
+
+1.self-organizing maps with a small number of nodes behave in a way that is similar to K-means

@@ -1,0 +1,176 @@
+NLP Book Summary:
+
+
+Libraries:::::::::::::::::::::::::::::::::::::::
+1.NLTK
+2.SpaCy
+3.TextBlob
+4.CoreNLP
+
+Motivation:
+1.Sentiment alalysis
+2.Topic Modeling
+3.Complaint Classification
+4.Document categorization
+5.Resume Sortlisting
+6.Information Retrieval 
+7.Chatbot,Q and A ,voice to text and text to voice translation
+8.LAnguage Decteion and translation
+9.TExt Summarization using graph method
+10.Text generation.predection
+
+Chapter1:::::::::::::::::::::::::::::::::::::::::::::
+Exctrating the data
+1.reading using api
+2.redaing pdf files
+3.reading word docoment
+4.reading json object
+5.reading html page and parsing
+6.regular expression
+7.strin ghandling
+Web Scraping
+
+Data Storage Option
+1.SQl databases
+2.Hadoop Cluster
+3.CLoud Storage
+4.Flat Files
+
+free Sources
+-Twittenr api
+wikipedia
+-Govenment data
+-census data 
+-Healthcatre data
+
+6. Parsing Text Using Regular Expressions:::::::::::::::::
+re.I To ignore the casing
+re.L Find the local dependency
+re.M to Find teh pattern of multiple lines
+re.S data matched
+re.U to work with the unicode data
+
+
+Regex:[ab] find t he single occurance of a and b
+Regex:[^ab] find character except for a and b
+
+
+
+
+
+Regex: [a-b] find teh character range of a to b
+Regex:[^x-z] 
+
+:::::::Chapter2:::Exploring and Processing Text Data::
+
+Some thing to do in data preprocessing
+1.Lowercasing
+2.Punctuation removel
+3.Stop words removel
+4.Text standardization
+5.spelling correction
+6.Tokenization
+7.stemming
+8.lemmatization
+9.Exploratory data analysis
+10.End t end processing pipeline
+
+
+Preprocessing involves transforming raw text data into an
+understandable format
+hese characters as punctuation:
+
+!"#$%&'()*+,-./:;?@[\]^_`{|}~ 
+
+Replacing the punctutation from dataframe 
+
+
+df.tweet = df.tweet.str.strip().str.replace('[^\w\s]', '')
+df['tweet']
+
+Recipe 2-6. Tokenizing Text:::::::::::::::::::::::::::
+Tokenization refers to splitting text into minimal meaningful units.
+
+
+There are many libraries to perform tokenization like NLTK, SpaCy, and TextBlob
+
+1.NLTK
+2.SpaCy
+3.TextBlob
+
+Converting Text to Features::::::::::::::::::::::
+input-text
+output-features
+1.one Hot Encoding 
+2.Count Vectorizer
+3.N gram 
+4.Co occurance matrix
+5,Hash  Vectorizer
+6.TFIdf
+
+All these methods or techniques we have looked into so far are based
+on frequency and hence called frequency-based embeddings or features.
+And in the next recipe, let us look at prediction-based embeddings,
+typically called word embeddings
+
+7.Word Embeddings
+8.Implementing fastText
+
+
+
+Word Embeddings::::::::::::::::::::::::::::::::::::::
+Word embedding is the feature learning technique where words from
+the vocabulary are mapped to vectors of real numbers capturing the
+contextual hierarchy
+
+
+1.Noun Phrase extraction
+2.Text similarity
+3.Parts of Speech tagging
+4.Information extraction-NER -ENTITY RECOGNITION
+5.TOPIC MODELING
+6.TEXT CLASSIFICATION
+7.SENTIMENT ANALYSIS
+8.WORD SENSE DISANBIGUATIN
+9.SPEECH RECOGNITION AND SPEECH TO TEXT
+10.TEXT TO SPEECH
+11.LANGUAGE DETECTION AND TRANSLATION
+
+PROBLEM SOLVING::
+
+1.Define the problem
+2.Understand the Depth and breadth of the problem
+3.Data Requirements brainstorming
+4.Data Collection
+5.Text processing
+6.Text to feature
+7.Macine learning/deep learning
+8.Insights and deployment
+
+
+#Recipe 4-1. Extracting Noun Phrases
+
+Recipe 4-3. Tagging Part of Speech::::::::::::::::::::::::
+
+1.Named Entity Resolution
+2.Sentiment analysis
+3.Quesion answering
+4.Word Sense Disambiguation
+
+
+
+
+# identify and extract entities from the text,
+# called Named Entity Recognition
+# different libraries to perform this task
+# 1.NLTK chunker
+# 2.StanfordNER
+# 3.SpaCy
+# 4.Opennlp
+# 5.NeuroNER
+# other API
+# A.WatsonNLU
+# B.AlchemyAPI
+# C.NERD
+# D.Google cloud api
+

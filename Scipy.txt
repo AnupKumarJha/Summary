@@ -1,0 +1,14 @@
+# Numpy provides a high-performance multidimensional array
+# and basic tools to compute with and manipulate these arrays.
+# SciPy builds on this, and provides a large number
+# of functions that operate on numpy arrays and are useful
+# for different types of scientific and engineering applications.
+# With SciPy, an interactive Python session becomes a data - processing and system - prototyping
+# environmen rivaling systems, such as MATLAB, IDL, Octave, R - Lab, and SciLab.
+##https://docs.scipy.org/doc/scipy/reference/tutorial/general.html##
+# Scipy is organized into subpackages covering different scientific computing domains
+# Subpackage
+#################cluster##########
+# Clustering algorithms are useful in information theory, target detection, communications, compression, and other areas. The vq
+# module only supports vector quantization and the k-means algorithms.
+########Constants

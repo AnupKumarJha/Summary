@@ -1,0 +1,139 @@
+#Numpy tutorial
+#large  doc
+#https://docs.scipy.org/doc/numpy/reference/########
+# A python package for scientific computing
+# it contains:
+# 1 a powerful N-dimensional array object
+# 2.sophisticated (broadcasting) functions
+# 3.tools for integrating C/C++ and Fortran code
+# 4.useful linear algebra, Fourier transform, and random number capabilities
+#create a array
+import numpy as np
+mylist=[1,2,3]
+myarray=np.array(mylist)
+print("mylist=",mylist)
+print("myarray=",myarray)
+#notice comma has been removed
+print("shape=",myarray.shape)
+#################access data############
+mylist=[[1,2,3],[4,5,6],[7,8,9]]
+myarray=np.array(mylist)
+print("myarray=",myarray)
+print("first row=",myarray[0])
+print("last row=",myarray[-1])
+print("first column=",myarray[:,0])#0 for first column
+print("second column=",myarray[:,1])
+print("last column=",myarray[:,-1])
+#accessing the particulalar data
+print("row and column=",myarray[0,2])
+##############################
+# creating a array of all zeros
+a=np.zeros((2,2))
+print("arrays of zeros=",a)
+b=np.ones((3,3))
+print("arrays of ones=",b)
+c=np.full((3,3),7)
+print("array of given no=",c)
+d=np.eye(4)
+print("create a 4*4 matrix",d)
+e=np.random.random((4,4))
+print("create a 4*4 random matrix",e)
+#############slicing of array##########
+a = np.array([[1,2,3,4], [5,6,7,8], [9,10,11,12]])
+b=a[:2,1:3]
+# Use slicing to pull out the subarray consisting of
+# the first 2 rows and columns 1 and 2;
+# b is the following array of shape (2, 2):[[2 3]  [6 7]]
+print("after the slicing =",b)
+#####################################
+# Datatypes
+# #
+# # Every numpy array is a grid of elements of the same type.
+# # Numpy provides a large set of numeric datatypes that you
+# # can use to construct arrays. Numpy tries to guess a datatype when
+# # you create an array, but functions that construct arrays usually
+# # also include an optional argument to explicitly specify the datatype. Here i
+a=np.array([1,2])
+print("data type",a.dtype)
+a=a=np.array([1.0,2.5])
+print("data type",a.dtype)
+a=np.array([1,2],dtype=np.int32)
+print("data type",a.dtype)
+#############Array math###############
+x = np.array([[1,2],[3,4]], dtype=np.float64)
+y = np.array([[5,6],[7,8]], dtype=np.float64)
+print("x+y=",x+y)
+print("after adding using add=",np.add(x,y))
+print("after subtracting=",x-y)
+print("after subtracting  using subtract=",np.subtract(x,y))
+print("after multiplly=",x*y)
+print("after multipy  using multiply=",np.multiply(x,y))
+print("after divide=",x/y)
+print("after divide  using dividr=",np.divide(x,y))
+print("after sqrt=",np.sqrt(x))
+#############dot product of matrix and vector########
+x = np.array([[1,2],[3,4]])
+y = np.array([[5,6],[7,8]])
+v = np.array([9,10])
+w = np.array([11, 12])
+# Inner product of vectors; both produce 219
+print("two vector dot prod=",v.dot(w))
+print("two vector dot prod using dot fun=",np.dot(v, w))
+# Matrix / vector product; both produce the rank 1 array [29 67]
+print("vector and matrix dot prod=",x.dot(v))
+print("vector and matrix dot prod using dot=",np.dot(x, v))
+# Matrix / matrix product; both produce the rank 2 array
+# [[19 22]
+#  [43 50]]
+print("2 matrix dot prod=",x.dot(y))
+print("vector and matrix dot prod using dot=",np.dot(x, y))
+############sum################
+a=np.array([[1,2],[3,5]])
+print("sum of matrix",np.sum(a))
+print("sum when axiz=0",np.sum(a,axis=0))#Compute sum of each column
+print("sum when axiz=1",np.sum(a,axis=1))#Compute sum of each row
+#######################Lot of function are there for work#########
+# Table of Contents
+#
+#     Mathematical functions
+#         Trigonometric functions
+#         Hyperbolic functions
+#         Rounding
+#         Sums, products, differences
+#         Exponents and logarithms
+#         Other special functions
+#         Floating point routines
+#         Rational routines
+#         Arithmetic operations
+#         Handling complex numbers
+#         Miscellaneous
+#################to get the transpose########
+print("a=",a)
+print("transpose a",a.T)
+##############Broadcasting#######################
+# Broadcasting is a powerful mechanism that allows numpy to work with
+# arrays of different shapes when performing arithmetic operations.
+# Frequently we have a smaller array and a larger array, and we want to use the
+# smaller array multiple times to perform some operation on the larger array.
+
+x = np.array([[1,2,3], [4,5,6], [7,8,9], [10, 11, 12]])
+v = np.array([1, 0, 1])
+y=np.empty_like(x)
+for i in range(4):
+    y[i,:]=x[i,:]+v
+print("after adding",y)
+##########another approach is tiling ######
+vv=np.tile(v,(4,1))
+print("stacked item is=",vv)
+print("after adding is =",x+vv)
+#Numpy broadcasting allows us to perform this computation without actually creating
+# multiple copies of v. Consider this version, using broadcasting:
+y = x + v  # Add v to each row of x using broadcasting
+print("y=",y)
+# #Broadcasting two arrays together follows these rules:
+#
+#     If the arrays do not have the same rank, prepend the shape of the lower rank array with 1s until both shapes have the same length.
+#     The two arrays are said to be compatible in a dimension if they have the same size in the dimension, or if one of the arrays has size 1 in that dimension.
+#     The arrays can be broadcast together if they are compatible in all dimensions.
+#     After broadcasting, each array behaves as if it had shape equal to the elementwise maximum of shapes of the two input arrays.
+#     In any dimension where one array had size 1 and the other array had size greater than 1, the first array behaves as if it were copied along that dimension
